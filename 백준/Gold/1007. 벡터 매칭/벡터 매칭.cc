@@ -8,15 +8,6 @@ int N;
 vector<pair<int, int>> points;
 #define MAX 200000000
 
-int count(int visited) {
-	int ret = 0;
-	while (visited > 0) {
-		ret += visited % 2;
-		visited /= 2;
-	}
-	return ret;
-}
-
 double min(double a, double b) {
 	return a < b ? a : b;
 }
@@ -33,8 +24,6 @@ double solution(int idx, int s, int e, int nMatching, long long x, long long y) 
 	ret = min(ret, solution(idx+1, s, e+1, nMatching + 1, x + points[idx].first, y + points[idx].second));
 	return ret;
 }
-
-
 
 
 int main() {
