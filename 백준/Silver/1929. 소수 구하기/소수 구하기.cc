@@ -13,6 +13,7 @@ int main() {
 	vector<bool> isPrime(n + 1, true);
 	isPrime[1] = false;
 	for (int i = 2; i < n; i++) {
+		if (!isPrime[i]) continue;
 		a = 2;
 		b = i * a;
 		while (b <= n) {
